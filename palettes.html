@@ -5,7 +5,7 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 --><html>
 <head>
-		<title>Documentation - BeepBeep 3</title>
+		<title>Palettes - BeepBeep 3</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
@@ -13,11 +13,8 @@
 		<!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
 		<link rel="stylesheet" href="assets/css/custom.css">
 		<meta name="author" content="Laboratoire d'informatique formelle">
-		<link rel="stylesheet" href="assets/js/styles/default.css">
-		<script src="assets/js/highlight.pack.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
 	</head>
-	<body class="left-sidebar">
+	<body class="no-sidebar">
 		<div id="page-wrapper">
 
 			<!-- Header -->
@@ -35,19 +32,19 @@
 	<ul>
 		<li><a href="index.html">Home</a></li>
 		<li><a href="quickintro.html">In 5 minutes</a></li>
-		<li>
+		<li class="current">
 <a href="features.html">Features</a>
 			<ul>
-			  <li><a href="use-cases.html">Examples of uses</a></li>
-				<li><a href="palettes.html">Available extensions</a></li>
+			  <li class="current"><a href="use-cases.html">Examples of uses</a></li>
+				<li class="current"><a href="palettes.html">Available extensions</a></li>
 			</ul>
 		</li>
 		<li><a href="get.html">Get BeepBeep</a></li>
-		<li class="current">
+		<li>
 <a href="documentation.html">Documentation</a>
 		  <ul>
-		    <li class="current"><a href="guide/index.html">User Guide</a></li>
-		    <li class="current"><a href="javadoc/index.html">API Reference</a></li>
+		    <li><a href="guide/index.html">User Guide</a></li>
+		    <li><a href="javadoc/index.html">API Reference</a></li>
 		  </ul>
 		</li>
 	</ul>
@@ -60,93 +57,63 @@
 <!-- Main -->
 <div id="main-wrapper">
 	<div class="container">
-		<div class="row 200%">
-			<div class="4u 12u$(medium)">
-				<div id="sidebar">
-
-					<!-- Sidebar -->
-					<section>
-<h3>In this page</h3>
-<ul class="style2">
-	<li><a href="#tutorial">Tutorial on BeepBeep</a></li>
-	<li><a href="#guide">User Guide</a></li>
-	<li><a href="#papers">Research Papers</a></li>
-</ul>
-</section>
-<!--
-<section>
-	<h3>Subheading</h3>
-	<p>Phasellus quam turpis, feugiat sit amet ornare in, hendrerit in lectus.
-	Praesent semper mod quis eget mi. Etiam eu ante risus. Aliquam erat volutpat.
-	Aliquam luctus et mattis lectus sit amet pulvinar. Nam turpis nisi
-	consequat etiam.</p>
-	<footer>
-		<a href="#" class="button icon fa-info-circle">Find out more</a>
-	</footer>
-</section>
-
-<section>
-	<h3>Subheading</h3>
-	<ul class="style2">
-		<li><a href="#">Amet turpis, feugiat et sit amet</a></li>
-		<li><a href="#">Ornare in hendrerit in lectus</a></li>
-		<li><a href="#">Semper mod quis eget mi dolore</a></li>
-		<li><a href="#">Quam turpis feugiat sit dolor</a></li>
-		<li><a href="#">Amet ornare in hendrerit in lectus</a></li>
-		<li><a href="#">Semper mod quisturpis nisi</a></li>
-	</ul>
-</section>
--->
-<!-- :indentSize=2:tabSize=2: -->
-				</div>
-			</div>
-			<div class="8u 12u$(medium) important(medium)">
 				<div id="content">
 
 					<!-- Content -->
 						<article>
-						<h2>Documentation</h2>
+							<h2>Palettes</h2>
 
-<h3>
-  <a name="tutorial">Tutorial</a>
-</h3>
+<p>BeepBeep was designed from the start to be easily extensible. As was discussed earlier,
+it consists of only a small core of built-in processors and functions. The rest of its
+functionalities are implemented through custom processors and grammar extensions,
+grouped in packages called palettes. Concretely, a palette is implemented as a JAR file
+that is loaded with BeepBeep's main program to extend its functionalities in a particular
+way. Users can also create their own new processors, and extend the eSQL grammar so
+that these processors can be integrated in queries.</p>
 
-<p>BeepBeep has been the subject of a tutorial at the <em>10th International Conference on Runtime Verification</em> (RV 2016), held in September 2016 in Madrid. You can find below the slides for this tutorial.</p>
+<p>This modular organization has three advantages. First, they are a flexible and generic
+way to extend the engine to various application domains, in ways unforeseen by its
+original designers. Second, they make the engine's core (and each palette individually)
+relatively small and self-contained, easing the development and debugging process.4
+Finally, it is hoped that BeepBeep's palette architecture, combined with its simple
+extension mechanisms, will help third-party users contribute to the BeepBeep ecosystem
+by developing and distributing extensions suited to their own needs.</p>
 
-<iframe src="http://www.slideshare.net/slideshow/embed_code/key/1dABqcu8jbKEr" width="340" height="290" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen=""> </iframe>
-
-<div style="margin-bottom:5px"> <strong> <a href="http://www.slideshare.net/sylvainhalle/when-rv-meets-cep-rv-2016-tutorial" title="When RV Meets CEP (RV 2016 Tutorial)" target="_blank">When RV Meets CEP (RV 2016 Tutorial)</a> </strong> from <strong><a target="_blank" href="http://www.slideshare.net/sylvainhalle">Sylvain Hall&eacute;</a></strong> 
-</div>
-
-<p>You can also read the 24-page research paper that accompanies these slides, which was also published at RV 2016:</p>
-
-<ul>
-<li>S. Hall&eacute;. (2016). <a href="https://www.researchgate.net/publication/308365310">When RV Meets CEP</a>. Proc. RV 2016, Springer Lecture Notes in Computer Science 10012, 68-91.</li>
-</ul>
-
-<h3>
-  <a name="guide">User Guide</a>
-</h3>
-
-<p>BeepBeep also has a guide for users and developers.</p>
+<p>We describe a few of the palettes that have already been developed for BeepBeep
+in the recent past. These processors are available alongside BeepBeep from the <a href="https://github.com/liflab/beepbeep-3-palettes">palette repository</a>
+software repository.</p>
 
 <ul>
-<li><a href="guide/index.html">User Guide</a></li>
 <li>
-<a href="javadoc/index.html">Javadoc</a> for BeepBeep's source code and API</li>
-</ul>
-
-<h3>
-  <a name="papers">Research Papers</a>
-</h3>
-
-<p>BeepBeep has been the subject of extensive academic research. You can find below a number of papers that have been published about BeepBeep in the recent past.</p>
-
-<ul>
-<li>S. Hall&eacute;, S. Gaboury, B. Bouchard. (2016). <a href="https://www.researchgate.net/publication/299763967">Activity Recognition Through Complex Event Processing: First Findings</a> Proc. ATSE 2016.</li>
-<li>S. Hall&eacute;, S. Gaboury, B. Bouchard. (2016). <a href="https://www.researchgate.net/publication/299763887">Towards User Activity Recognition Through Energy Usage Analysis And Complex Event Processing</a> Proc. PETRA 2016.</li>
-<li>S. Hall&eacute;, S. Varvaressos. (2014). <a href="https://www.researchgate.net/publication/286119666">A Formalization of Complex Event Stream Processing</a>
-</li>
+<strong>LTL-FO+</strong>: This palette provides processors for evaluating all operators of Linear Temporal Logic
+(LTL), in addition to the first-order quantification defined in LTL-FO + (and present in
+previous versions of BeepBeep)</li>
+<li>
+<strong>FSM</strong>: This palette allows one to define a Moore machine, a special case of finite-state machine
+where each state is associated to an output symbol. This Moore machine allows its
+transitions to be guarded by arbitrary functions; hence it can operate on traces of events
+of any type.</li>
+<li>
+<strong>Gnuplot</strong>: This palette allows the conversion of events into input files for the Gnuplot
+application. For example, an event that is a set of (x, y) coordinates can be transformed
+into a text file producing a 2D scatterplot of these points. An additional processor can
+receive these strings of text, call Gnuplot in the background and retrieve its output.
+The events of the output trace, in this case, are binary strings containing image files.5</li>
+<li>
+<strong>Tuples</strong>: This palette provides the implementation of the named tuple event type. A named
+tuple is a map between names (i.e. Strings) and arbitrary objects. In addition, the
+palette includes a few utility functions for manipulating tuples. The Select processor
+allows a tuple to be created by naming and combining the contents of multiple input
+events. The From processor transforms input events from multiple traces into an array
+(which can be used by Select), and the Where processor internally duplicates an
+input trace and sends it into a Filter evaluating some function. Combined together,
+these processors provide the same kind of functionality as the SQL-like SELECT
+statement of other CEP engines.</li>
+<li>
+<strong>XML, JSON and CSV</strong>: This palette provides a processor that converts text events into
+parsed XML documents. It also contains a Function object that can evaluate
+an XPath expression on an XML document. Another palette provides the same
+functionalities for events in the JSON and the CSV format.</li>
 </ul>
 
 <!-- :wrap=soft: -->
@@ -154,8 +121,6 @@
 
 				</div>
 			</div>
-		</div>
-	</div>
 </div>
 			<!-- Footer -->
 				<div id="footer-wrapper">
